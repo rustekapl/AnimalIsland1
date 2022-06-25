@@ -21,4 +21,32 @@ public class Parameters {
         this.maxSpeed = maxSpeed;
         this.maxFood = maxFood;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public double getMaxWeight() {
+        return maxWeight;
+    }
+
+    public int getMaxCount() {
+        return maxCount;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public double getMaxFood() {
+        return maxFood;
+    }
 }

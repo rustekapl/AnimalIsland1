@@ -23,6 +23,18 @@ public class Cell {
         for (int i = 0; i < carnivores.size(); i++) {
             Carnivore carnivore = carnivores.get(i);
             carnivore.eat(herbivores);
+            carnivore.reproduct();
+            carnivore.move();
+        }
+        for (int i = 0; i < herbivores.size(); i++) {
+            Herbivore herbivore=herbivores.get(i);
+            herbivore.eat(plants);
+            herbivore.reproduct();
+            herbivore.reproduct();
+        }
+        for (int i = 0; i < plants.size(); i++) {
+            Plants plant = plants.get(i);
+            plant.reproduct();
         }
 
     }

@@ -2,7 +2,6 @@ package ru.javarush.aleev.island.entity.organism.animals.herbivores;
 
 
 import ru.javarush.aleev.island.annotations.TypeData;
-import ru.javarush.aleev.island.entity.organism.plants.Plant;
 import ru.javarush.aleev.island.entity.organism.plants.Plants;
 
 import java.util.List;
