@@ -3,6 +3,9 @@ package ru.javarush.aleev.island.entity.organism.animals.herbivores;
 
 import ru.javarush.aleev.island.annotations.TypeData;
 import ru.javarush.aleev.island.entity.organism.plants.Plant;
+import ru.javarush.aleev.island.entity.organism.plants.Plants;
+
+import java.util.List;
 
 import static ru.javarush.aleev.island.cotstants.Constants.*;
 
@@ -20,7 +23,7 @@ public class Boar extends Herbivore{
     }
 
     @Override
-    public void eat(Plant plant) {
+    public void eat(List<Plants> plants) {
 
     }
 

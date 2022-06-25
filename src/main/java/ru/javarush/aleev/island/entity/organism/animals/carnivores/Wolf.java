@@ -4,6 +4,8 @@ package ru.javarush.aleev.island.entity.organism.animals.carnivores;
 import ru.javarush.aleev.island.annotations.TypeData;
 import ru.javarush.aleev.island.entity.organism.animals.herbivores.Herbivore;
 
+import java.util.List;
+
 import static ru.javarush.aleev.island.cotstants.Constants.*;
 
 @TypeData(name = "Wolf",
@@ -19,7 +21,7 @@ public class Wolf extends Carnivore {
     }
 
     @Override
-    public void eat(Herbivore herbivore) {
+    public void eat(List<Herbivore> herbivores) {
 
     }
 

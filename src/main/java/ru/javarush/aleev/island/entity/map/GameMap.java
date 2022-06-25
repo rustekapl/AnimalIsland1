@@ -1,21 +1,37 @@
 package ru.javarush.aleev.island.entity.map;
 
-import annotations.TypeData;
-import utils.Randomizer;
+
 
 public class GameMap {
 
     public static Cell[][] cells = new Cell[5][5];
 
-    public void setLive(){
+    //создаем поле
+    public void fill(){
         for (int i = 0; i < cells.length; i++) {
-            for (int j = 0; j < cells[0].length; j++) {
-                int num = Randomizer.get(new TypeData().getClass().);
+            for (int j = 0; j < cells[i].length; j++) {
+                cells[i][j]=new Cell();
             }
         }
     }
 
+//    public void setLive(){
+//        for (int i = 0; i < cells.length; i++) {
+//            for (int j = 0; j < cells[0].length; j++) {
+//
+//            }
+//        }
+//    }
 
+    // вывод на экран карты
+public void print(){
+    for (int i = 0; i < cells.length; i++) {
+        for (int j = 0; j < cells[i].length; j++) {
+            System.out.print(cells[i][j]);
+        }
+        System.out.println();
+    }
+}
 
 //    private final Cell[][] cells;
 //

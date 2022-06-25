@@ -4,13 +4,16 @@ package ru.javarush.aleev.island.entity.organism.animals.herbivores;
 import ru.javarush.aleev.island.entity.map.Cell;
 import ru.javarush.aleev.island.entity.organism.animals.Animal;
 import ru.javarush.aleev.island.entity.organism.plants.Plant;
+import ru.javarush.aleev.island.entity.organism.plants.Plants;
+
+import java.util.List;
 
 
 public abstract class Herbivore extends Animal {
     public Herbivore(String name, String icon, double maxWeight, int maxCount, int maxSpeed, double maxFood) {
         super(name, icon, maxWeight, maxCount, maxSpeed, maxFood);
     }
-public abstract void eat (Plant plant);
+public abstract void eat (List<Plants> plants);
 
     @Override
     public void move() {

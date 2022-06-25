@@ -4,9 +4,11 @@ package ru.javarush.aleev.island.entity.organism.animals.carnivores;
 import ru.javarush.aleev.island.annotations.TypeData;
 import ru.javarush.aleev.island.entity.organism.animals.herbivores.Herbivore;
 
+import java.util.List;
+
 import static ru.javarush.aleev.island.cotstants.Constants.*;
 
-@TypeData(name = "Bera",
+@TypeData(name = "Bear",
         icon = BEAR_ICON,
         maxWeight = MAX_WEIGHT_BEAR,
         maxCount = MAX_COUNT_BEAR,
@@ -20,7 +22,7 @@ public class Bear extends Carnivore {
     }
 
     @Override
-    public void eat(Herbivore herbivore) {
+    public void eat(List<Herbivore> herbivores) {
 
     }
 

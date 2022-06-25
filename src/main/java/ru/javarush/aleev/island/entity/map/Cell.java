@@ -1,14 +1,35 @@
 package ru.javarush.aleev.island.entity.map;
 
+import ru.javarush.aleev.island.entity.organism.Organism;
+import ru.javarush.aleev.island.entity.organism.animals.carnivores.Carnivore;
+import ru.javarush.aleev.island.entity.organism.animals.herbivores.Herbivore;
+import ru.javarush.aleev.island.entity.organism.plants.Plants;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cell {
 
     int row;
     int col;
 
-    public Cell(int row, int col) {
-        this.row = row;
-        this.col = col;
+    List<Herbivore> herbivores = new ArrayList<>();
+    List<Carnivore> carnivores = new ArrayList<>();
+    List<Plants> plants = new ArrayList<>();
+
+//    List<Organism> residents = new ArrayList<>();
+
+    public void getOrganism(){
+        for (int i = 0; i < carnivores.size(); i++) {
+            Carnivore carnivore = carnivores.get(i);
+            carnivore.eat(herbivores);
+        }
+
     }
+//    public Cell(int row, int col) {
+//        this.row = row;
+//        this.col = col;
+//    }
 
 //    private final Map<String, Set<Organism>> residents = new HashMap<>() {
 //        private void checkNull(Object key) {
@@ -37,4 +58,10 @@ public class Cell {
 //                .map(Object::toString)
 //                .collect(Collectors.joining());
 //    }
+
+
+    @Override
+    public String toString() {
+        return " || ";
+    }
 }
