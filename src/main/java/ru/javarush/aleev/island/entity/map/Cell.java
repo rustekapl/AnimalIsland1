@@ -25,75 +25,73 @@ public class Cell {
         this.cols = cols;
     }
 
-//    public Map<String, Set<Organism>> residents = new HashMap<>();
-
-    public static void main(String[] args) {
+    public Map<String, Set<Organism>> residents = new HashMap<>();
 
 
+//    public Set<Organism> getCellSet() {
+//        int countBear;
+//        int countWolf;
+//        int countBoar;
+//        int countHorse;
+//        //Делаем сет организмов
+//        Set<Organism> set = new HashSet<>();
+//        //Делаем сет медведей
+//        countBear = Randomizer.get(2, Constants.MAX_COUNT_BEAR);
+//        for (int k = 0; k < countBear; k++) {
+//            set.add(new Bear(new Parameters(Constants.NAME_BEAR, Constants.BEAR_ICON,
+//                    Randomizer.get(Constants.MAX_WEIGHT_BEAR - Constants.MAX_FOOD_BEAR, Constants.MAX_WEIGHT_BEAR),
+//                    Constants.MAX_WEIGHT_BEAR, Constants.MAX_COUNT_BEAR, Constants.MAX_SPEED_BEAR, Constants.MAX_FOOD_BEAR)));
+//        }
+//
+//        //Делаем сет волков
+//        countWolf = Randomizer.get(2, Constants.MAX_COUNT_WOLF);
+//        for (int k = 0; k < countWolf; k++) {
+//            set.add(new Wolf(new Parameters(Constants.NAME_WOLF, Constants.WOLF_ICON,
+//                    Randomizer.get(Constants.MAX_WEIGHT_WOLF - Constants.MAX_FOOD_WOLF, Constants.MAX_WEIGHT_WOLF),
+//                    Constants.MAX_WEIGHT_WOLF, Constants.MAX_COUNT_WOLF, Constants.MAX_SPEED_WOLF, Constants.MAX_FOOD_WOLF)));
+//        }
+//
+//        //Делаем сет кабанов
+//        countBoar = Randomizer.get(2, Constants.MAX_COUNT_BOAR);
+//        for (int k = 0; k < countBoar; k++) {
+//            set.add(new Boar(new Parameters(Constants.NAME_BOAR, Constants.BOAR_ICON,
+//                    Randomizer.get(Constants.MAX_WEIGHT_BOAR - Constants.MAX_FOOD_BOAR, Constants.MAX_WEIGHT_BOAR),
+//                    Constants.MAX_WEIGHT_BOAR, Constants.MAX_COUNT_BOAR, Constants.MAX_SPEED_BOAR, Constants.MAX_FOOD_BOAR)));
+//        }
+//
+//        //Делаем сет лошадей
+//        countHorse = Randomizer.get(2, Constants.MAX_COUNT_HORSE);
+//        for (int k = 0; k < countHorse; k++) {
+//            set.add(new Horse(new Parameters(Constants.NAME_HORSE, Constants.HORSE_ICON,
+//                    Randomizer.get(Constants.MAX_WEIGHT_HORSE - Constants.MAX_FOOD_HORSE, Constants.MAX_WEIGHT_HORSE),
+//                    Constants.MAX_WEIGHT_HORSE, Constants.MAX_COUNT_HORSE, Constants.MAX_SPEED_HORSE, Constants.MAX_FOOD_HORSE)));
+//        }
+//        for (int k = 0; k < Constants.MAX_COUNT_PLANT; k++) {
+//            set.add(new Plant(new Parameters(Constants.NAME_PLANT, Constants.PLANT_ICON,
+//                    Constants.MAX_WEIGHT_PLANT, Constants.MAX_WEIGHT_PLANT, Constants.MAX_COUNT_PLANT, 0, 0)));
+//
+//        }
+//
+//        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+//        System.out.println(set.size() + " : " + set);
+//        System.out.println("=============================================================================");
+//
+//
+//        //печатаем состав ячейки
+//        Map<String, Integer> counter = new HashMap<>();
+//        for (Organism organism :
+//                set) {
+//            int count = counter.getOrDefault(organism.getClass().getSimpleName(), 0) + 1;
+//
+//            counter.put(organism.getClass().getSimpleName(), count);
+//        }
+//        System.out.println(set.size() + " : " + counter);
+//        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+//
+//
+//        return set;
+//    }
 
-//    public Set getCellSet() {
-        int countBear;
-        int countWolf;
-        int countBoar;
-        int countHorse;
-        //Делаем сет организмов
-        Set<Organism> set = new HashSet<>();
-        //Делаем сет медведей
-        countBear = Randomizer.get(2, Constants.MAX_COUNT_BEAR);
-        for (int k = 0; k < countBear; k++) {
-            set.add(new Bear(new Parameters(Constants.NAME_BEAR, Constants.BEAR_ICON,
-                    Randomizer.get(Constants.MAX_WEIGHT_BEAR - Constants.MAX_FOOD_BEAR, Constants.MAX_WEIGHT_BEAR),
-                    Constants.MAX_WEIGHT_BEAR, Constants.MAX_COUNT_BEAR, Constants.MAX_SPEED_BEAR, Constants.MAX_FOOD_BEAR)));
-        }
-
-        //Делаем сет волков
-        countWolf = Randomizer.get(2, Constants.MAX_COUNT_WOLF);
-        for (int k = 0; k < countWolf; k++) {
-            set.add(new Wolf(new Parameters(Constants.NAME_WOLF, Constants.WOLF_ICON,
-                    Randomizer.get(Constants.MAX_WEIGHT_WOLF - Constants.MAX_FOOD_WOLF, Constants.MAX_WEIGHT_WOLF),
-                    Constants.MAX_WEIGHT_WOLF, Constants.MAX_COUNT_WOLF, Constants.MAX_SPEED_WOLF, Constants.MAX_FOOD_WOLF)));
-        }
-
-        //Делаем сет кабанов
-        countBoar = Randomizer.get(2, Constants.MAX_COUNT_BOAR);
-        for (int k = 0; k < countBoar; k++) {
-            set.add(new Boar(new Parameters(Constants.NAME_BOAR, Constants.BOAR_ICON,
-                    Randomizer.get(Constants.MAX_WEIGHT_BOAR - Constants.MAX_FOOD_BOAR, Constants.MAX_WEIGHT_BOAR),
-                    Constants.MAX_WEIGHT_BOAR, Constants.MAX_COUNT_BOAR, Constants.MAX_SPEED_BOAR, Constants.MAX_FOOD_BOAR)));
-        }
-
-        //Делаем сет лошадей
-        countHorse = Randomizer.get(2, Constants.MAX_COUNT_HORSE);
-        for (int k = 0; k < countHorse; k++) {
-            set.add(new Horse(new Parameters(Constants.NAME_HORSE, Constants.HORSE_ICON,
-                    Randomizer.get(Constants.MAX_WEIGHT_HORSE - Constants.MAX_FOOD_HORSE, Constants.MAX_WEIGHT_HORSE),
-                    Constants.MAX_WEIGHT_HORSE, Constants.MAX_COUNT_HORSE, Constants.MAX_SPEED_HORSE, Constants.MAX_FOOD_HORSE)));
-        }
-        for (int k = 0; k < Constants.MAX_COUNT_PLANT; k++) {
-            set.add(new Plant(new Parameters(Constants.NAME_PLANT, Constants.PLANT_ICON,
-                    Constants.MAX_WEIGHT_PLANT, Constants.MAX_WEIGHT_PLANT,Constants.MAX_COUNT_PLANT,0,0)));
-
-        }
-
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-        System.out.println(set.size() + " : " + set);
-        System.out.println("=============================================================================");
-
-
-        //печатаем состав ячейки
-        Map<String, Integer> counter = new HashMap<>();
-        for (Organism organism :
-                set) {
-            int count = counter.getOrDefault(organism.getClass().getSimpleName(), 0) + 1;
-
-            counter.put(organism.getClass().getSimpleName(), count);
-        }
-        System.out.println(counter);
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-
-
-        //return set;
-    }
 
 //public static void main(String[] args) {
 
