@@ -1,26 +1,19 @@
 package ru.javarush.aleev.island.entity.organism.animals.herbivores;
 
 
-import ru.javarush.aleev.island.annotations.TypeData;
-import ru.javarush.aleev.island.entity.organism.plants.Plant;
 import ru.javarush.aleev.island.entity.organism.plants.Plants;
+import ru.javarush.aleev.island.parameters.Parameters;
 
 import java.util.List;
 
-import static ru.javarush.aleev.island.cotstants.Constants.*;
-
-@TypeData(name ="Boar",
-        icon =BOAR_ICON,
-        maxWeight = MAX_WEIGHT_BOAR,
-        maxCount = MAX_COUNT_BOAR,
-        maxSpeed = MAX_SPEED_BOAR,
-        maxFood = MAX_FOOD_BOAR)
-
 public class Boar extends Herbivore{
-
-    public Boar(String name, String icon, double maxWeight, int maxCount, int maxSpeed, double maxFood) {
-        super(name, icon, maxWeight, maxCount, maxSpeed, maxFood);
+    public Boar(Parameters parameters) {
+        super(parameters);
     }
+
+//    public Boar(String name, String icon, double maxWeight, int maxCount, int maxSpeed, double maxFood) {
+//        super(name, icon, maxWeight, maxCount, maxSpeed, maxFood);
+//    }
 
     @Override
     public void eat(List<Plants> plants) {
@@ -36,4 +29,9 @@ public class Boar extends Herbivore{
     public void reproduct() {
         super.reproduct();
     }
+
+//    @Override
+//    public String toString() {
+//        return super.toString();
+//    }
 }

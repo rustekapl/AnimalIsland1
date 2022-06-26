@@ -12,10 +12,10 @@ public class Parameters {
     private final int maxSpeed;
     private final double maxFood;
 
-    public Parameters(String name, String icon, double maxWeight, int maxCount, int maxSpeed, double maxFood) {
+    public Parameters(String name, String icon,double weight, double maxWeight, int maxCount, int maxSpeed, double maxFood) {
         this.name = name;
         this.icon = icon;
-        this.weight = Randomizer.get((maxWeight-maxFood),maxWeight);
+        this.weight = weight;
         this.maxWeight = maxWeight;
         this.maxCount = maxCount;
         this.maxSpeed = maxSpeed;

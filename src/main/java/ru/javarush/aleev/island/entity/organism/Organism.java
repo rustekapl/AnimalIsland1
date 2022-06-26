@@ -1,20 +1,20 @@
 package ru.javarush.aleev.island.entity.organism;
 
-import ru.javarush.aleev.island.annotations.TypeData;
+
 import ru.javarush.aleev.island.interfaces.Reproductable;
 import ru.javarush.aleev.island.parameters.Parameters;
 import ru.javarush.aleev.island.utils.Randomizer;
 
 
 public abstract class Organism implements Reproductable {
-    private final String name;
-    private final String icon;
+    private String name;
+    private String icon;
     private double weight;
-    private final double maxWeight;
-    private final int maxCount;
-    private final int maxSpeed;
-    private final double maxFood;
-    private final String type = this.getClass().getSimpleName();
+    private double maxWeight;
+    private int maxCount;
+    private int maxSpeed;
+    private double maxFood;
+    //private final String type = this.getClass().getSimpleName();
 
     public Organism(Parameters parameters) {
         this.name = parameters.getName();
@@ -46,5 +46,33 @@ public abstract class Organism implements Reproductable {
     @Override
     public String toString() {
         return icon;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public double getMaxWeight() {
+        return maxWeight;
+    }
+
+    public int getMaxCount() {
+        return maxCount;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public double getMaxFood() {
+        return maxFood;
     }
 }
