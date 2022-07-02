@@ -39,7 +39,6 @@ public class GameMap {
 
     //заполняем ячейки организмами
 
-
 public void fill(){
     Map<Class<?>,Parameters> gameMap= GameParameters.getParameters();
     Organism organism;
@@ -61,6 +60,7 @@ public void fill(){
             }
         }
     }
+
 }
 
 public void getNextCells(){
@@ -228,6 +228,19 @@ public void getNextCells(){
             }
             System.out.println();
         }
+        int totalCount = 0;
+
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[i].length; j++) {
+                Map<Type, Set<Organism>> map1 = cells[i][j].resident;
+                for (Set<Organism> value : map1.values()) {
+                    for (Organism alive : value) {
+                        totalCount++;
+                    }
+                }
+            }
+        }
+        System.out.println("Total value of Organisms are  " + totalCount);
     }
 
 //    public void printInfo() {
