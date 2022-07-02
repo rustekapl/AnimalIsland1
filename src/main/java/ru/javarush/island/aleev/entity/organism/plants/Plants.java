@@ -8,6 +8,9 @@ public abstract class Plants extends Organism {
         super(parameters);
     }
 
+//    public Plants(String name, String icon, double weight, double maxWeight, int maxCount, int maxSpeed, double maxFood) {
+//        super(name, icon, weight, maxWeight, maxCount, maxSpeed, maxFood);
+//    }
 
     @Override
     public void reproduct() {

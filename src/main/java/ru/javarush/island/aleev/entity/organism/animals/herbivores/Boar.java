@@ -12,7 +12,6 @@ public class Boar extends Herbivore{
 
 
 
-
     public void eat(Cell currentCell) {
 //    currentCell.residents.forEach((key, value) -> System.out.print(key + "=" + value.size() + " "))
 

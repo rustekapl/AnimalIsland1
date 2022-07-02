@@ -14,9 +14,9 @@ public abstract class Herbivore extends Animal {
     }
 
 
-public abstract void eat (Cell curentCell);
+    public abstract void eat (Cell curentCell);
 
-    @Override
+
     public void move() {
 
     }

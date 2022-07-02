@@ -9,8 +9,9 @@ public class Plant extends Plants {
         super(parameters);
     }
 
-
-
+//    public Plant(String name, String icon, double weight, double maxWeight, int maxCount, int maxSpeed, double maxFood) {
+//        super(name, icon, weight, maxWeight, maxCount, maxSpeed, maxFood);
+//    }
 //    public void reproduct(Cell currentCell) {
 //
 //    }

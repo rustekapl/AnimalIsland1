@@ -13,6 +13,7 @@ public class Wolf extends Carnivore {
     }
 
 
+
     @Override
     public void eat(List<Herbivore> herbivores) {
 

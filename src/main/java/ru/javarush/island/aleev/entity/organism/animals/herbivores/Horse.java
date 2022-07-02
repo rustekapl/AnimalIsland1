@@ -10,7 +10,6 @@ public class Horse extends Herbivore {
     }
 
 
-
     @Override
     public void eat(Cell currentCell) {
 

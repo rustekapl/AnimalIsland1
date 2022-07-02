@@ -8,10 +8,15 @@ public class Runner {
     public static void main(String[] args) {
         GameMap gameMap = new GameMap();
         gameMap.init();
-        gameMap.print();
-        System.out.println("*****************************************************************************");
         gameMap.fill();
+        gameMap.getNextCells();
+//        gameMap.print();
         gameMap.printInfo();
+
+
+
+
+
 //
 //        System.out.println(GameMap.cells[0][0].residents.get("Plant").size());
 //        GameMap.cells[0][0].residents.forEach((key, value) -> System.out.print(key + "=" + value.size() + " "));
