@@ -1,6 +1,6 @@
 package ru.javarush.island.aleev.entity.organism.animals.herbivores;
 
-import ru.javarush.island.aleev.entity.map.Cell;
+
 import ru.javarush.island.aleev.parameters.Parameters;
 
 public class Goat extends Herbivore{
@@ -13,8 +13,5 @@ public class Goat extends Herbivore{
 
     }
 
-    @Override
-    public void eat(Cell curentCell) {
 
-    }
 }

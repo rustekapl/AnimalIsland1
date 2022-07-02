@@ -23,8 +23,8 @@ public class Cell {
 
     public void life(){
         reproduct();
-        //eat();
-       // move();
+//        eat();
+       move();
 
     }
 
@@ -70,6 +70,34 @@ public class Cell {
             }
         }
     }
+    
+    private void move(){
+        for (Map.Entry<Type, Set<Organism>> resident :
+                resident.entrySet()) {
+            Set<Organism> organisms = resident.getValue();
+            Iterator<Organism> iterator=organisms.iterator();
+            while (iterator.hasNext()){
+                Organism organism=iterator.next();
+                boolean isMove = organism.move(this);
+                if(isMove) iterator.remove();
+            }
+        }
+    }
+
+//    private void eat(){
+//        for (Map.Entry<Type, Set<Organism>> pair :
+//                resident.entrySet()) {
+//            Set<Organism> organisms = pair.getValue();
+//            for (Organism organism :
+//                    organisms) {
+//                if (organism instanceof Carnivore) {
+//                    OrganismType[] herbivores = Constants.getHerbivores();
+//                    for (int i = 0; i < herbivores.length; i++) {
+//                        ((Carnivore)organism).eat(resident.get(herbivores[i]));
+//                    }
+//                }
+//        }
+//    }
 
 
 
@@ -92,10 +120,10 @@ public class Cell {
 
 
 
-//    public void addOrganismToSet(Type type, Organism organism) {
-//        Set<Organism> organismSet = this.resident.get(type);
-//        organismSet.add(organism);
-//    }
+    public void addOrganismToSet(Type type, Organism organism) {
+        Set<Organism> organismSet = this.resident.get(type);
+        organismSet.add(organism);
+    }
 
     public Map<Type, Set<Organism>> getOrganisms() {
         return resident;
@@ -105,11 +133,11 @@ public class Cell {
         this.resident.put(type, organisms);
     }
 
-    @Override
-    public String toString() {
-
-        return resident.toString();
-    }
+//    @Override
+//    public String toString() {
+//
+//        return resident.toString();
+//    }
 
 
 }

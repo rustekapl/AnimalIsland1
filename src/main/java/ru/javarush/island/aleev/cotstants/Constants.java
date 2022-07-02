@@ -1,10 +1,17 @@
 package ru.javarush.island.aleev.cotstants;
 
 
+import static ru.javarush.island.aleev.cotstants.OrganismType.*;
+
 public class Constants {
     public static final int LENGTH_ISLAND = 4;
     public static final int WIDTH_ISLAND = 4;
 //    public static final int TIME_CYCLE = 500;
+
+    public static OrganismType[] getHerbivores(){
+        OrganismType[] herbivores = {BOAR,BUFFALO,CATERPILLAR,DEER,DUCK,GOAT,HORSE,MOUSE,RABBIT,SHEEP};
+        return herbivores;
+    }
 
 
     public static final String NAME_BEAR = "Bear";

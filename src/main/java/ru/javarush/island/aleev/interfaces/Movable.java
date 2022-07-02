@@ -4,5 +4,5 @@ import ru.javarush.island.aleev.entity.map.Cell;
 
 @FunctionalInterface
 public interface Movable {
-    void move(Cell currentCell);
+    boolean move(Cell currentCell);
 }

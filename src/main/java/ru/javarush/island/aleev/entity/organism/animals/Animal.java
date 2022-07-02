@@ -15,13 +15,9 @@ public abstract class Animal extends Organism implements Movable {
 
 
 
-    @Override
-    public void move(Cell currentCell) {
-//            int steps = this.getSpeed();
-//            Cell target = start.getLastCell(steps);
-//            target.addOrganismToSet(this.getClass(), this);
-//            start.removeOrganismFromSet(this.getClass(), this);
-    }
+    public boolean move(Cell currentCell) {
+return false;
+            }
 
 
     public abstract void eat();
