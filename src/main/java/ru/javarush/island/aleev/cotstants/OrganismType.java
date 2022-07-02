@@ -1,21 +1,22 @@
 package ru.javarush.island.aleev.cotstants;
 
 public enum OrganismType {
-    WOLF,
-//    BOA,
-//    FOX,
     BEAR,
-//    EAGLE,
-    HORSE,
-//    DEER,
-//    RABBIT,
-//    MOUSE,
-//    GOAT,
-//    SHEEP,
+    BOA,
+    EAGLE,
+    FOX,
+    WOLF,
     BOAR,
-//    BUFFALO,
-//    DUCK,
-//    CATERPILLAR,
+    BUFFALO,
+    CATERPILLAR,
+    DEER,
+    DUCK,
+    GOAT,
+    HORSE,
+    MOUSE,
+    RABBIT,
+    SHEEP,
     PLANT
+
 
 }

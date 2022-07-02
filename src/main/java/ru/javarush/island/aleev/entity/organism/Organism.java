@@ -1,16 +1,9 @@
 package ru.javarush.island.aleev.entity.organism;
 
 
-import ru.javarush.island.aleev.cotstants.Constants;
-import ru.javarush.island.aleev.cotstants.OrganismType;
-import ru.javarush.island.aleev.entity.map.Cell;
-import ru.javarush.island.aleev.entity.map.GameMap;
 import ru.javarush.island.aleev.exception.GameException;
 import ru.javarush.island.aleev.interfaces.Reproductable;
 import ru.javarush.island.aleev.parameters.Parameters;
-import ru.javarush.island.aleev.utils.Randomizer;
-
-import java.util.concurrent.ThreadLocalRandom;
 
 
 public abstract class Organism implements Cloneable, Reproductable {
@@ -61,23 +54,23 @@ public abstract class Organism implements Cloneable, Reproductable {
         }
     }
 
-    public boolean move(Cell currentCell){
-        int targetRow = currentCell.getRow()+ Randomizer.get(0,this.maxSpeed/2);
-        int targetCol = currentCell.getCol()+Randomizer.get(0,this.maxSpeed)/2;
-        boolean isMove = ThreadLocalRandom.current().nextBoolean();
-
-        if(targetRow> Constants.WIDTH_ISLAND){
-            targetRow=(Integer)targetRow%Constants.WIDTH_ISLAND;
-        }
-        if(targetCol> Constants.LENGTH_ISLAND){
-            targetCol=(Integer)targetRow%Constants.WIDTH_ISLAND;
-        }
-
-        if(isMove){
-           GameMap.cells[targetRow][targetCol].resident.get(OrganismType.valueOf(this.getClass().getSimpleName().toUpperCase())).add(this);
-        }
-        return isMove;
-    }
+//    public boolean move(Cell currentCell){
+//        int targetRow = currentCell.getRow()+ Randomizer.get(0,this.maxSpeed/2);
+//        int targetCol = currentCell.getCol()+Randomizer.get(0,this.maxSpeed)/2;
+//        boolean isMove = ThreadLocalRandom.current().nextBoolean();
+//
+//        if(targetRow> Constants.WIDTH_ISLAND){
+//            targetRow=(Integer)targetRow%Constants.WIDTH_ISLAND;
+//        }
+//        if(targetCol> Constants.LENGTH_ISLAND){
+//            targetCol=(Integer)targetRow%Constants.WIDTH_ISLAND;
+//        }
+//
+//        if(isMove){
+//           GameMap.cells[targetRow][targetCol].resident.get(OrganismType.valueOf(this.getClass().getSimpleName().toUpperCase())).add(this);
+//        }
+//        return isMove;
+//    }
 
 
     public String getName() {

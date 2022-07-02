@@ -13,9 +13,6 @@ public abstract class Carnivore extends Animal {
         super(parameters);
     }
 
-//    public Carnivore(String name, String icon, double weight, double maxWeight, int maxCount, int maxSpeed, double maxFood) {
-//        super(name, icon, weight, maxWeight, maxCount, maxSpeed, maxFood);
-//    }
 
     public abstract void eat(List<Herbivore> herbivores);
 

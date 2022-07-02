@@ -124,7 +124,7 @@ public class Constants {
     public static final String DUCK_ICON = "\ud83e\udd86";
     public static final double MAX_WEIGHT_DUCK = 1;
     public static final int MAX_COUNT_DUCK = 200;
-    public static final int SPEED_DUCK = 4;
+    public static final int MAX_SPEED_DUCK = 4;
     public static final double MAX_FOOD_DUCK = 0.15;
 
 
