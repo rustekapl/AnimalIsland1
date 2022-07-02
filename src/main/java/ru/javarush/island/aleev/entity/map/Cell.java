@@ -2,13 +2,9 @@ package ru.javarush.island.aleev.entity.map;
 
 
 import ru.javarush.island.aleev.entity.organism.Organism;
-import ru.javarush.island.aleev.utils.Randomizer;
 
 import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Cell {
 
@@ -25,8 +21,13 @@ public class Cell {
         this.col = col;
     }
 
-    //Делаем сет организмов
-//    public Map<String, Set<Organism>> residents = new HashMap<>();
+    public void life(){
+        reproduct();
+        //eat();
+       // move();
+
+    }
+
 
 
     public int getRow() {
@@ -45,15 +46,31 @@ public class Cell {
         this.nextCells = nextCells;
     }
 
-    public Cell getNextCells(int speed) {
-        Cell currentCell = this;
-        for (int i = 0; i < speed; i++) {
-            List<Cell> nextCells = currentCell.getNextCells();
-            int direction = Randomizer.get(0, nextCells.size() - 1);
-            currentCell = nextCells.get(direction);
+//    public Cell getNextCells(int speed) {
+//        Cell currentCell = this;
+//        for (int i = 0; i < speed; i++) {
+//            List<Cell> nextCells = currentCell.getNextCells();
+//            int direction = Randomizer.get(0, nextCells.size() - 1);
+//            currentCell = nextCells.get(direction);
+//        }
+//        return currentCell;
+//    }
+
+    private void reproduct(){
+        Iterator<Map.Entry<Type, Set<Organism>>> iterator = resident.entrySet().iterator();
+        while (iterator.hasNext()){
+            Map.Entry<Type,Set<Organism>> pair=iterator.next();
+            Organism organism = (Organism) pair.getKey();
+            Set<Organism> organisms = pair.getValue();
+            if(organisms!=null){
+                int newborns = organisms.size()/2;
+                for (int i = 0; i < newborns; i++) {
+                    organisms.add((Organism) organism.clone());
+                }
+            }
         }
-        return currentCell;
     }
+
 
 
 
@@ -75,10 +92,10 @@ public class Cell {
 
 
 
-    public void addOrganismToSet(Type type, Organism organism) {
-        Set<Organism> organismSet = this.resident.get(type);
-        organismSet.add(organism);
-    }
+//    public void addOrganismToSet(Type type, Organism organism) {
+//        Set<Organism> organismSet = this.resident.get(type);
+//        organismSet.add(organism);
+//    }
 
     public Map<Type, Set<Organism>> getOrganisms() {
         return resident;
