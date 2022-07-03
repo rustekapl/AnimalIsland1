@@ -1,6 +1,8 @@
 package ru.javarush.island.aleev.cotstants;
 
-public enum OrganismType {
+import java.lang.reflect.Type;
+
+public enum OrganismType implements Type {
     BEAR,
     BOA,
     EAGLE,
@@ -16,8 +18,11 @@ public enum OrganismType {
     MOUSE,
     RABBIT,
     SHEEP,
-    PLANT
+    PLANT;
 
 
-
+    @Override
+    public String getTypeName() {
+        return Type.super.getTypeName();
+    }
 }
