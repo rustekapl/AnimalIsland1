@@ -1,7 +1,6 @@
 package ru.javarush.island.aleev.entity.organism.animals.herbivores;
 
 
-
 import ru.javarush.island.aleev.entity.organism.Organism;
 import ru.javarush.island.aleev.entity.organism.animals.Animal;
 import ru.javarush.island.aleev.parameters.Parameters;
@@ -19,13 +18,13 @@ public abstract class Herbivore extends Animal {
     }
 
 
-    public void eat (Set<Organism> plants){
+    public void eat(Set<Organism> grass) {
         int randomNum;
-        Iterator<Organism> iterator=plants.iterator();
-        while (iterator.hasNext()){
-            Organism organism=iterator.next();
-            randomNum= Randomizer.get(0,1);
-            if(randomNum==1){
+        Iterator<Organism> iterator = grass.iterator();
+        while (iterator.hasNext()) {
+            Organism organism = iterator.next();
+            randomNum = Randomizer.get(0, 2);
+            if (randomNum == 1) {
                 iterator.remove();
             }
         }

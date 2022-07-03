@@ -11,9 +11,7 @@ public class Plant extends Plants {
     }
 
 
-//    public void reproduct(Cell currentCell) {
-//
-//    }
+
 
 
     @Override

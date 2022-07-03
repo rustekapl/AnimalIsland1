@@ -10,8 +10,4 @@ public abstract class Plants extends Organism {
 
 
 
-//    @Override
-//    public void reproduct() {
-//        super.reproduct();
-//    }
 }

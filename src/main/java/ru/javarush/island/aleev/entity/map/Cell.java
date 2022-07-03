@@ -1,8 +1,11 @@
 package ru.javarush.island.aleev.entity.map;
 
 
+import ru.javarush.island.aleev.cotstants.Constants;
 import ru.javarush.island.aleev.cotstants.OrganismType;
 import ru.javarush.island.aleev.entity.organism.Organism;
+import ru.javarush.island.aleev.entity.organism.animals.carnivores.Carnivore;
+import ru.javarush.island.aleev.entity.organism.animals.herbivores.Herbivore;
 import ru.javarush.island.aleev.factories.OrganismFactory;
 import ru.javarush.island.aleev.parameters.GameParameters;
 
@@ -18,8 +21,6 @@ public class Cell {
     private final int col;
 
 
-//    public Map<Type, Set<Organism>> resident = new HashMap<>();
-
     public Map<OrganismType, Set<Organism>> resident = new HashMap<>();
 
 
@@ -28,13 +29,12 @@ public class Cell {
         this.col = col;
     }
 
-    public void life(){
+    public void life() {
         reproduct();
-//        eat();
-       move();
+        eat();
+        move();
 
     }
-
 
 
     public int getRow() {
@@ -45,38 +45,21 @@ public class Cell {
         return col;
     }
 
-//    public List<Cell> getNextCells() {
-//        return nextCells;
-//    }
 
-//    public void setNextCells(List<Cell> nextCells) {
-//        this.nextCells = nextCells;
-//    }
-
-//    public Cell getNextCells(int speed) {
-//        Cell currentCell = this;
-//        for (int i = 0; i < speed; i++) {
-//            List<Cell> nextCells = currentCell.getNextCells();
-//            int direction = Randomizer.get(0, nextCells.size() - 1);
-//            currentCell = nextCells.get(direction);
-//        }
-//        return currentCell;
-//    }
-
-    private void reproduct(){
-        Iterator<Map.Entry<OrganismType, Set<Organism>>> iterator = resident.entrySet().iterator();
-        while (iterator.hasNext()){
-            Map.Entry<OrganismType,Set<Organism>> pair=iterator.next();
+    private void reproduct() {
+        for (Map.Entry<OrganismType, Set<Organism>> pair : resident.entrySet()) {
             OrganismType organismType = pair.getKey();
             Set<Organism> organismSet = pair.getValue();
-            if(organismSet!=null&&organismSet.size()+organismSet.size()/2< GameParameters.getInstance().getParameters().get(organismType).getMaxCount()){
-                int newborns = organismSet.size()/2;
+
+
+            int newborns = organismSet.size() / 2;
+            if (organismSet.size() < GameParameters.getInstance().getParameters().get(organismType).getMaxCount() - newborns) {
                 for (int i = 0; i < newborns; i++) {
                     Organism organism = OrganismFactory.getInstance().getPrototype(organismType);
                     organismSet.add(organism);
                 }
             } else {
-                int newborns = GameParameters.getInstance().getParameters().get(organismType).getMaxCount()-organismSet.size();
+                newborns = GameParameters.getInstance().getParameters().get(organismType).getMaxCount() - organismSet.size();
                 for (int i = 0; i < newborns; i++) {
                     Organism organism = OrganismFactory.getInstance().getPrototype(organismType);
                     organismSet.add(organism);
@@ -84,62 +67,45 @@ public class Cell {
             }
         }
     }
-    
-    private void move(){
+
+    private void move() {
         for (Map.Entry<OrganismType, Set<Organism>> resident :
                 resident.entrySet()) {
             Set<Organism> organismSet = resident.getValue();
-            Iterator<Organism> iterator=organismSet.iterator();
-            while (iterator.hasNext()){
-                Organism organism=iterator.next();
+            Iterator<Organism> iterator = organismSet.iterator();
+            while (iterator.hasNext()) {
+                Organism organism = iterator.next();
                 boolean isMove = organism.move(this);
-                if(isMove) iterator.remove();
+                if (isMove) iterator.remove();
             }
         }
     }
 
-//    private void eat(){
-//        for (Map.Entry<OrganismType, Set<Organism>> pair :
-//                resident.entrySet()) {
-//            Set<Organism> organisms = pair.getValue();
-//            for (Organism organism :
-//                    organisms) {
-//                if (organism instanceof Carnivore) {
-//                    OrganismType[] herbivores = Constants.getHerbivores();
-//                    for (int i = 0; i < herbivores.length; i++) {
-//                        ((Carnivore)organism).eat(resident.get(herbivores[i]));
-//                    }
-//                }
-//        }
-//    }
-
-
-
-
-
-
-
-
-
-
-    public void addOrganismToSet(OrganismType organismType, Organism organism) {
-        Set<Organism> organismSet = this.resident.get(organismType);
-        organismSet.add(organism);
+    private void eat() {
+        for (Map.Entry<OrganismType, Set<Organism>> pair :
+                resident.entrySet()) {
+            Set<Organism> organisms = pair.getValue();
+            for (Organism organism :
+                    organisms) {
+                if (organism instanceof Carnivore) {
+                    OrganismType[] herbivores = Constants.getHerbivores();
+                    for (OrganismType herbivore : herbivores) {
+                        ((Carnivore) organism).eat(resident.get(herbivore));
+                    }
+                } else if (organism instanceof Herbivore) {
+                    Set<Organism> plants = resident.get(OrganismType.PLANT);
+                    if (plants != null) {
+                        ((Herbivore) organism).eat(plants);
+                    }
+                }
+            }
+        }
     }
+
 
     public Map<OrganismType, Set<Organism>> getOrganisms() {
         return resident;
     }
-
-    public void setOrganisms(OrganismType organismType, Set<Organism> organisms) {
-        this.resident.put(organismType, organisms);
-    }
-
-//    @Override
-//    public String toString() {
-//
-//        return resident.toString();
-//    }
 
 
 }

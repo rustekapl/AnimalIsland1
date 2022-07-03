@@ -9,8 +9,7 @@ public class Constants {
 //    public static final int TIME_CYCLE = 500;
 
     public static OrganismType[] getHerbivores(){
-        OrganismType[] herbivores = {BOAR,BUFFALO,CATERPILLAR,DEER,DUCK,GOAT,HORSE,MOUSE,RABBIT,SHEEP};
-        return herbivores;
+        return new OrganismType[]{BOAR,BUFFALO,CATERPILLAR,DEER,DUCK,GOAT,HORSE,MOUSE,RABBIT,SHEEP};
     }
 
 

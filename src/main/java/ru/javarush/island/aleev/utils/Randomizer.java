@@ -12,15 +12,6 @@ public class Randomizer {
 
         return ThreadLocalRandom.current().nextInt(from, to);
     }
-    public static double get(double from, double to){
-
-        return ThreadLocalRandom.current().nextDouble(from, to);
-    }
 
 
-
-    public static boolean get (int probability){
-        return get(0,100)<probability;
-
-    }
 }

@@ -3,11 +3,10 @@ package ru.javarush.island.aleev.entity.organism.animals;
 
 import ru.javarush.island.aleev.entity.map.Cell;
 import ru.javarush.island.aleev.entity.organism.Organism;
-import ru.javarush.island.aleev.interfaces.Movable;
 import ru.javarush.island.aleev.parameters.Parameters;
 
 
-public abstract class Animal extends Organism implements Movable {
+public abstract class Animal extends Organism {
     public Animal(Parameters parameters) {
         super(parameters);
     }
